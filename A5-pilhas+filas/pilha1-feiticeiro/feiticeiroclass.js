@@ -2,6 +2,11 @@ class Organizador {
     #feitico = [];
     #tamanho = 0;
 
+    // ! UMA FILA E BASEADA EM *LILO* (last in - last out)
+    // entra: A -> B -> C
+    // sai: C -> B -> A (invertido)
+    // * pense em uma pilha de pratos, vc so consegue pegar o prato de baixo antes de pegar todos os outros em cima
+
     addFeitico(feitico) {
         this.#feitico[this.#tamanho] = feitico;
         // this: refere-se à instância atual da classe
@@ -15,12 +20,14 @@ class Organizador {
         if (this.#tamanho === 0) {
             return undefined;
         }
-        //pega item do topo
+        //guarda o item do topo
         const ultimoFeitico = this.#feitico[this.#tamanho - 1]
+
         // remove ele
         delete this.#feitico[this.#tamanho - 1];
         // diminui o tamanho
         this.#tamanho--;
+
         // retorna o item removido
         return ultimoFeitico;
     }
