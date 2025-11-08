@@ -61,6 +61,18 @@ class Pilha {
 
   // Retorna o número de elementos na pilha
   tamanhoPilha = () => this.#tamanho;
+
+  buscar(valor) {
+    // Percorre os itens da pilha
+    for (let i = 0; i < this.#tamanho; i++) {
+      // Se encontrar o valor, retorna true
+      if (this.#itens[i] === valor) {
+        return true;
+      }
+    }
+    // Se não encontrar, retorna false
+    return false;
+  }
 }
 
 module.exports = Pilha;

@@ -78,7 +78,7 @@ class BinaryTree {
 
   // Método auxiliar para realizar a busca recursivamente
   _searchNode(node, value) {
-    if (node === undefined) return false; // Se o nó atual é undefined, o valor não está na árvore
+    if (node == null) return false;; // Se o nó atual é undefined, o valor não está na árvore
 
     if (value === node.value) {
       // Se o valor é encontrado retorna true

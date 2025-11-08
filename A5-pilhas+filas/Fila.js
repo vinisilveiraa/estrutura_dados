@@ -65,6 +65,16 @@ class Fila {
   // Retorna o tamanho da fila
   // Calcula a diferença entre fim e início
   tamanho = () => this.#fim - this.#inicio;
+
+  buscar(elemento) {
+    for (let i = this.#inicio; i < this.#fim; i++) {
+      if (this.#itens[i] === elemento) {
+        return i - this.#inicio; // Retorna o índice relativo ao início da fila
+      }
+    }
+    return -1; // Retorna -1 se o elemento não for encontrado
+  }
+
 }
 
 module.exports = Fila;

@@ -64,7 +64,7 @@ class ListaEncadeada {
         let current = this.#head
 
         while (current !== undefined) {
-            console.log(current.value)
+            // console.log(current.value)
             // percorre toda a lista
             if (current.value === value) {
                 return current;
