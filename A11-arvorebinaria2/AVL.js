@@ -22,6 +22,7 @@ class AVLTree {
     // Rotação simples à direita
     rotateRight(y) {
         const x = y.left;
+        if (!x) return y; // impedir rotação inválida
         const T2 = x.right;
 
         x.right = y;
@@ -36,6 +37,7 @@ class AVLTree {
     // Rotação simples à esquerda
     rotateLeft(x) {
         const y = x.right;
+        if (!y) return x; // impedir rotação inválida
         const T2 = y.left;
 
         y.left = x;
@@ -50,7 +52,12 @@ class AVLTree {
     // Inserção com balanceamento AVL
     insert(value) {
         this.#root = this._insertNode(this.#root, value);
+
+        // Proteção REAL contra ciclo
+        if (this.#root.left === this.#root) this.#root.left = null;
+        if (this.#root.right === this.#root) this.#root.right = null;
     }
+
 
     _insertNode(node, value) {
         if (!node) return new Node(value);
@@ -104,7 +111,7 @@ class AVLTree {
     buscar(value, node = this.#root) {
         if (!node) {
             return false; // Valor não encontrado
-        }  
+        }
         if (value === node.value) {
             return true; // Valor encontrado
         }
@@ -112,6 +119,11 @@ class AVLTree {
             ? this.buscar(value, node.left)
             : this.buscar(value, node.right);
     }
+
+    getRoot() {
+        return this.#root;
+    }
+
 }
 
 module.exports = AVLTree;

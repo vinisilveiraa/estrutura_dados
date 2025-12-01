@@ -2,8 +2,8 @@
 class Node {
   constructor(value) {
     this.value = value;
-    this.left = undefined;
-    this.right = undefined;
+    this.left = null;
+    this.right = null;
     this.height = 1; // Todo nó começa com altura 1
   }
 }
