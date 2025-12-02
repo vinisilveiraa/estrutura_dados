@@ -13,3 +13,13 @@ grafo.imprimirMatrizAdjacencia();
 grafo.dfs('A');
 grafo.bfs('A');
 grafo.dijkstra('A');
+
+
+// dfs - Depth-First Search (Busca em Profundidade)
+// Vai o mais fundo possível no grafo antes de voltar.
+
+// bfs - Breadth-First Search (Busca em Largura)
+// Explora o grafo em camadas, visitando primeiro tudo que está mais perto do ponto inicial.
+
+// dijkstra - Algoritmo de Dijkstra
+// Encontra o caminho mais curto de um vértice para todos os outros em um grafo ponderado.

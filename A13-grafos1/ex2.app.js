@@ -1,10 +1,11 @@
-const Grafo = require('./grafos.js');
+const Grafo_peso = require('./grafo_compeso');
 
-const meuGrafo = new Grafo();
+const meuGrafo = new Grafo_peso();
 
 // 2) Adicione pesos às arestas no grafo.
 // –Implemente o algoritmo de busca em largura (BFS).
 // –Crie um grafo ponderado e calcule o menor caminho entre dois vértices.
+
 
 meuGrafo.adicionarVertice('1');
 meuGrafo.adicionarVertice('4');
@@ -16,20 +17,12 @@ meuGrafo.adicionarAresta('1', '3', 10);
 meuGrafo.adicionarAresta('2', '4', 2);
 
 meuGrafo.imprimirGrafo();
-console.log('=====================')
+console.log('=====================');
 
-meuGrafo.buscaEmLargura('1');
-console.log('=====================')
+meuGrafo.bfs('1');
+console.log('=====================');
 
-meuGrafo.menorCaminho('1', '4');
-meuGrafo.menorCaminho('1', '3');
-console.log('=====================')
-
-meuGrafo.removerVertice('2');
-meuGrafo.imprimirGrafo();
-console.log('=====================')
-
-meuGrafo.buscaEmLargura('1');
-console.log('=====================')
-meuGrafo.menorCaminho('1', '4');
-meuGrafo.menorCaminho('1', '3');
+// menor caminho entre 1 e 4
+const resultado = meuGrafo.menorCaminho('1', '4');
+console.log("Menor caminho 1 → 4:", resultado.caminho.join(" -> "));
+console.log("Custo total:", resultado.distancia);
