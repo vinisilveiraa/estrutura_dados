@@ -30,7 +30,7 @@ class Sorter {
         if (arr.length <= 1) return arr; // se for menor ou igual a um, nao tem oq ordernar
 
         const pivot = arr[arr.length - 1]; // ultimo elemento
-        const menores = []; 
+        const menores = [];
         const maiores = [];
 
         // so uma est de repeticao
@@ -47,7 +47,7 @@ class Sorter {
         // metodo recursivo (se chama)
         return [...Sorter.quickSort(menores), pivot, ...Sorter.quickSort(maiores)];
         // retorna o mesmo metodo, fazendo o mesmo processo para os outros arrays que agora estao inseridos em um array so
-        
+
         // usa o primeiro if para retornar caso o array estiver correto
         // ! gif nao pega o pivot como ultimo elemento
     }
@@ -58,12 +58,12 @@ class Sorter {
  */
     static mergeSort(arr) {
         if (arr.length <= 1) return arr;
-        
+
         const meio = Math.floor(arr.length / 2); // corta no meio (arrendonda pra baixo)
         // recursiva
-        const esquerda = Sorter.mergeSort(arr.slice(0, meio)); 
+        const esquerda = Sorter.mergeSort(arr.slice(0, meio));
         const direita = Sorter.mergeSort(arr.slice(meio));
-        
+
         return Sorter.merge(esquerda, direita);
     }
 
