@@ -29,7 +29,7 @@ class GrafoPonderado {
 
         this.adjacencia.get(origem).push({ vertice: destino, peso })
 
-        // se o grafo for nao-direcionado, descomente a linha abaixo:
+        // ! se o grafo for nao-direcionado, descomente a linha abaixo:
         // grafos direcionados cria a aresta no sentido oposto (destino → origem).
 
         // this.adjacencia.get(destino).push({ vertice: origem, peso })
