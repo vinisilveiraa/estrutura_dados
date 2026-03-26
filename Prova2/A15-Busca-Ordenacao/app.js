@@ -1,0 +1,1 @@
+const tamanho_vetor = 50000;
